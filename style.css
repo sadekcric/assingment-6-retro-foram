@@ -4,3 +4,11 @@
 .mulish{
   font-family: "Mulish", sans-serif;
 }
+
+
+.bg-img{
+  background: url('images/bgbanner.png'),linear-gradient(180deg,#12132D,#030712);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
