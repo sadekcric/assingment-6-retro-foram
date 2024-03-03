@@ -1,7 +1,10 @@
 const display = document.getElementById("display");
 
+const addCard = document.getElementById("add_card");
+
 const DisplayCardInnerHtml = (item) => {
   const createDiv = document.createElement("div");
+
   createDiv.classList = "";
 
   // console.log(createDiv);
@@ -47,7 +50,7 @@ const DisplayCardInnerHtml = (item) => {
               </div>
             </div>
 
-            <div>
+            <div onclick="addCardFunc('${item.title}','${item.view_count}')">
               <i class="bx bx-message-alt rotate-180 bg-green-400 px-2 py-1 text-white text-lg rounded-full"></i>
             </div>
           </section>
@@ -55,8 +58,29 @@ const DisplayCardInnerHtml = (item) => {
   </div>
   `;
 
+  // add card
+
   display.appendChild(createDiv);
+  
 };
+
+const addCardFunc=(title,view)=>{
+  
+  const addCardDiv=document.createElement('div')
+
+  addCardDiv.innerHTML = `
+  <div class="bg-white rounded-xl flex justify-between items-center p-3 mt-5">
+  <h4 class="text-lg font-bold">${title}</h4>
+  
+  <div class="flex items-center gap-1">
+    <i class="bx bx-show"> </i>
+    <p>${view}</p>
+  </div>
+  </div>
+  `;
+  
+    addCard.appendChild(addCardDiv)
+}
 
 const search = async () => {
   const spinner = document.getElementById("spinner");

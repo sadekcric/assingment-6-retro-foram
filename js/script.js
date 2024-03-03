@@ -10,7 +10,7 @@ const fetchApi=async()=>{
   
   data.posts.forEach(item=>{
     // console.log(item);
-    DisplayCardInnerHtml(item)
+    DisplayCardInnerHtml(item);
     
     
   })
