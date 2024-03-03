@@ -43,9 +43,7 @@
                 <div class="tooltip rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" data-tip="Edit">
                   <button><i class="bx bx-pencil text-2xl"></i></button>
                 </div>
-                
               </li>
-              
 
               <!-- added -->
               <li>
@@ -53,7 +51,6 @@
                   <button><i class="bx bx-user text-2xl"></i></button>
                 </div>
               </li>
-              
 
               <!-- users-->
               <li>
@@ -61,7 +58,6 @@
                   <button><i class="bx bx-flag text-2xl"></i></button>
                 </div>
               </li>
-              
             </ul>
 
             <!-- button -->
@@ -83,8 +79,8 @@
           </p>
 
           <div class="relative">
-            <input type="text" placeholder="Search here anything" class="lg:text-xl py-4 lg:px-8 px-3 bg-gray-200 w-full rounded-full" />
-            <button class="btn px-6 md:px-10 lg:text-xl absolute top-[6px] right-5 rounded-full bg-indigo-400 text-white">Search</button>
+            <input id="search_field" type="text" placeholder="Search here anything" class="lg:text-xl py-4 lg:px-8 px-3 bg-gray-200 w-full rounded-full" />
+            <button onclick="search()" class="btn px-6 md:px-10 lg:text-xl absolute top-[6px] right-5 rounded-full bg-indigo-400 text-white">Search</button>
           </div>
         </div>
 
@@ -130,56 +126,9 @@
         </section>
 
         <!-- body -->
-        <section class="flex flex-col lg:flex-row mt-10 gap-2">
-          <!-- card section -->
-          <section class="lg:w-2/3 lg:flex lg:justify-center">
-            <div class="bg-gray-200 p-8 rounded-2xl">
-              <!-- category+ title+ img-->
-              <div class="flex gap-6">
-                <div class="relative bg-white rounded-xl w-20 h-16">
-                  <img src="" alt="" />
-                  <div class="absolute w-4 h-4 rounded-full bg-green-600 -top-1 -right-1"></div>
-                </div>
-
-                <div class="space-y-2">
-                  <div class="flex gap-5">
-                    <p class="font-semibold text-sm">#Music</p>
-                    <p class="font-semibold text-sm">Author: <span>Awiad Hossain</span></p>
-                  </div>
-
-                  <h3 class="text-lg lg:text-2xl font-bold">10 Kids Unaware of Their Halloween Costume</h3>
-
-                  <p>It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
-
-                  <div class="border-b border-dashed border-gray-400"></div>
-
-                  <!-- Message/view/watch -->
-                  <section class="flex justify-between">
-                    <div class="text-sm flex gap-3">
-                      <div class="flex items-center gap-1">
-                        <i class="bx bx-comment-dots"></i>
-                        <p>500</p>
-                      </div>
-
-                      <div class="flex items-center gap-1">
-                        <i class="bx bx-show"> </i>
-                        <p>1568</p>
-                      </div>
-
-                      <div class="flex items-center gap-1">
-                        <i class="bx bx-time"> </i>
-                        <p>5 min</p>
-                      </div>
-                    </div>
-
-                    <div>
-                      <i class="bx bx-message-alt rotate-180 bg-green-400 px-2 py-1 text-white text-lg rounded-full"></i>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </section>
+        <section class="flex flex-col lg:flex-row mt-10 gap-4">
+          <!-- Display -->
+          <section id="display" class="lg:w-2/3 space-y-3"></section>
 
           <!-- card section 2 -->
           <section class="bg-gray-200 p-7 rounded-2xl lg:flex-1">
@@ -279,6 +228,11 @@
           </div>
         </section>
       </section>
+
+      <!-- loading -->
+      <div id="spinner" class="hidden">
+        <span class="loading loading-spinner loading-lg text-blue-600 fixed top-[50%] left-[50%]"></span>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -318,5 +272,6 @@
 
     <!-- script section -->
     <script src="./js/script.js"></script>
+    <script src="./js/function.js"></script>
   </body>
 </html>
