@@ -1,4 +1,7 @@
 const display = document.getElementById("display");
+const cardCount = document.getElementById("card_count");
+
+let count = 0;
 
 const addCard = document.getElementById("add_card");
 
@@ -14,8 +17,16 @@ const DisplayCardInnerHtml = (item) => {
       <!-- category+ title+ img-->
       <div class="flex gap-6">
         <div class="relative  rounded-xl w-20 h-16">
+
+
+
+
+
+
+
+
           <img src="${item.image}" alt="" />
-          <div class="absolute w-2 h-2 md:w-4 md:h-4 rounded-full bg-green-600 -top-1 -right-1"></div>
+          <div class=" absolute w-2 h-2 md:w-4 md:h-4 rounded-full -top-1 -right-1"></div>
         </div>
 
         <div class="space-y-3">
@@ -58,15 +69,13 @@ const DisplayCardInnerHtml = (item) => {
   </div>
   `;
 
-  // add card
-
   display.appendChild(createDiv);
-  
 };
 
-const addCardFunc=(title,view)=>{
-  
-  const addCardDiv=document.createElement('div')
+const addCardFunc = (title, view) => {
+  count++;
+  cardCount.innerText = count;
+  const addCardDiv = document.createElement("div");
 
   addCardDiv.innerHTML = `
   <div class="bg-white rounded-xl flex justify-between items-center p-3 mt-5">
@@ -78,9 +87,9 @@ const addCardFunc=(title,view)=>{
   </div>
   </div>
   `;
-  
-    addCard.appendChild(addCardDiv)
-}
+
+  addCard.appendChild(addCardDiv);
+};
 
 const search = async () => {
   const spinner = document.getElementById("spinner");
