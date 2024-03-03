@@ -25,31 +25,43 @@
     <header class="container mx-auto">
       <!-- Navbar -->
       <nav>
-        <div class="flex items-center justify-between lg:mt-2 p-4">
+        <div class="flex items-center justify-between mt-2 lg:mt-4 p-4">
           <!-- logo -->
           <div class="text-2xl md:text-4xl font-extrabold">ReTro</div>
 
           <div class="flex gap-10 items-center">
             <ul class="md:flex gap-5 hidden">
               <!-- home -->
-              <li class="rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" title="Home">
-                <i class="bx bx-home-alt-2 text-2xl"></i>
+              <li>
+                <div class="tooltip rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" data-tip="Home">
+                  <button><i class="bx bx-home-alt-2 text-2xl"></i></button>
+                </div>
               </li>
 
               <!-- Edit -->
-              <li class="rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" title="Edit">
-                <i class="bx bx-pencil text-2xl"></i>
+              <li>
+                <div class="tooltip rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" data-tip="Edit">
+                  <button><i class="bx bx-pencil text-2xl"></i></button>
+                </div>
+                
               </li>
+              
 
               <!-- added -->
-              <li class="rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" title="Add">
-                <i class="bx bx-user text-2xl"></i>
+              <li>
+                <div class="tooltip rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" data-tip="Add">
+                  <button><i class="bx bx-user text-2xl"></i></button>
+                </div>
               </li>
+              
 
               <!-- users-->
-              <li class="rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" title="Users">
-                <i class="bx bx-flag text-2xl"></i>
+              <li>
+                <div class="tooltip rounded-full bg-slate-100 w-14 h-14 flex justify-center items-center" data-tip="Users">
+                  <button><i class="bx bx-flag text-2xl"></i></button>
+                </div>
               </li>
+              
             </ul>
 
             <!-- button -->
