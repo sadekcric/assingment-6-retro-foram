@@ -17,8 +17,8 @@ const DisplayCardInnerHtml = (item) => {
       <!-- category+ title+ img-->
       <div class="flex gap-6">
         <div class="relative  rounded-xl w-20 h-16">
-          <img src="${item.image}" alt="" />
-          <div class="${item.isActive?'bg-green-500':'bg-red-500'} absolute w-2 h-2 md:w-4 md:h-4 rounded-full -top-1 -right-1"></div>
+          <img src="${item.image}" alt="" class="rounded-2xl"/>
+          <div class="${item.isActive ? "bg-green-500" : "bg-red-500"} absolute w-2 h-2 md:w-4 md:h-4 rounded-full -top-1 -right-1"></div>
         </div>
 
         <div class="space-y-3">
