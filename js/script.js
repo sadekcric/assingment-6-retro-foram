@@ -63,6 +63,30 @@ const displayCard=async()=>{
   })
 }
 
+const search = async () => {
+  const spinner = document.getElementById("spinner");
+  spinner.classList.remove("hidden");
+  const searchField = document.getElementById("search_field");
+  const searchText = searchField.value;
+
+  const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+  const category = data.posts;
+
+  setTimeout(() => {
+    display.innerHTML = ``;
+    spinner.classList.add("hidden");
+  }, 2000);
+
+  category.forEach((item) => {
+    setTimeout(function () {
+      DisplayCardInnerHtml(item);
+    }, 2000);
+  });
+};
+
 displayCard()
 
 fetchApi();

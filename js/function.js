@@ -12,8 +12,8 @@ const DisplayCardInnerHtml = (item) => {
 
   // console.log(createDiv);
   createDiv.innerHTML = `
-  <div class="">
-    <div class="bg-gray-200 p-8 rounded-2xl">
+  <div >
+    <div class="bg-gray-200 p-8 rounded-2xl hover:bg-[#797DFC33] hover:border-2 hover:border-[#797DFC] border-2 duration-150">
       <!-- category+ title+ img-->
       <div class="flex gap-6">
         <div class="relative  rounded-xl w-20 h-16">
@@ -83,26 +83,4 @@ const addCardFunc = (title, view) => {
   addCard.appendChild(addCardDiv);
 };
 
-const search = async () => {
-  const spinner = document.getElementById("spinner");
-  spinner.classList.remove("hidden");
-  const searchField = document.getElementById("search_field");
-  const searchText = searchField.value;
 
-  const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`;
-
-  const res = await fetch(url);
-  const data = await res.json();
-  const category = data.posts;
-
-  setTimeout(() => {
-    display.innerHTML = ``;
-    spinner.classList.add("hidden");
-  }, 2000);
-
-  category.forEach((item) => {
-    setTimeout(function () {
-      DisplayCardInnerHtml(item);
-    }, 2000);
-  });
-};
