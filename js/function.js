@@ -53,7 +53,7 @@ const DisplayCardInnerHtml = (item) => {
               </div>
             </div>
 
-            <div onclick="addCardFunc('${item.title}','${item.view_count}')">
+            <div onclick="addCardFunc('${item.title.replace(`'`,``)}','${item.view_count}')">
               <i class="bx bx-message-alt rotate-180 bg-green-400 px-2 py-1 text-white text-lg rounded-full"></i>
             </div>
           </section>
@@ -82,5 +82,3 @@ const addCardFunc = (title, view) => {
 
   addCard.appendChild(addCardDiv);
 };
-
-
